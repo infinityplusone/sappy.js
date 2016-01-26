@@ -1,7 +1,7 @@
 {
   "name": "sappy.js",
   "description": "✨a jquery plugin that styles the sappy things you say - to make him happy ✨",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/infinityplusone/sappy.js.git"
@@ -9,6 +9,7 @@
   "author": {
     "name": "@grungerabbit // cheryl wu"
   },
+  "main": "sappy.js",
   "homepage": "https://github.com/grungerabbit/sappy.js.git",
   "license": "MIT",
   "maintainers": [
