@@ -1,7 +1,7 @@
 {
   "name": "sappy.js",
   "description": "✨a jquery plugin that styles the sappy things you say - to make him happy ✨",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/infinityplusone/sappy.js.git"
@@ -16,5 +16,8 @@
       "name": "Jonathan \"Yoni\" Knoll",
       "email": "jonathan@infinityplusone.com"
     }
-  ]
+  ],
+  "dependencies": {
+    "jquery": "^1.4.2"
+  }
 }
