@@ -5,6 +5,7 @@
         // @grungerabbit // cheryl wu 
         // - - - - - - - - - - - - - - - - 
         // ? / ! / ... / $%@#& ~~> https://github.com/grungerabbit/sappy.js
+        "fontsLoaded": false,
         "config": {
             "version": "1.0.0",
             "repo": "https://github.com/grungerabbit/sappy.js",
@@ -61,8 +62,9 @@
                 google: { families: [ 'Dancing+Script::latin', 'Satisfy::latin', 'Cookie::latin', 'Great+Vibes::latin', 'Calligraffitti::latin', 'Homemade+Apple::latin', 'Love+Ya+Like+A+Sister::latin', 'Mountains+of+Christmas::latin', 'Mystery+Quest::latin', 'Oswald::latin', 'Anton::latin', 'Pathway+Gothic+One::latin', 'Playfair+Display:900:latin', 'Special+Elite::latin', 'Contrail+One::latin', 'Six+Caps::latin', 'Allerta+Stencil::latin', 'Unica+One::latin', 'Averia+Sans+Libre:300:latin' ] }
             };
             WebFontConfig.google.families.forEach(function(f) {
-                $('html').append('<link href="http://fonts.googleapis.com/css?family=' + f + '" rel="stylesheet" type="text/css">');
+                $('head').append('<link href="http://fonts.googleapis.com/css?family=' + f + '" rel="stylesheet" type="text/css">');
             });
+            sappyJs.fontsLoaded = true;
         },
         "rng": function(max) {
             return Math.floor(Math.random() * (max));
@@ -161,9 +163,14 @@
 
     $.fn.sappy = function(options) {
         var settings = $.extend({
+            loadFonts: true,
             selected: "alt"
         }, options);
-        
+
+        if(settings.loadFonts && !sappyJs.fontsLoaded) {
+            sappyJs.loadFonts();
+        }
+
         sappyJs.sappyMods(this, settings);
         return this;
     };
